@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+title{
+    text-decoration: none;
+}
+.main{
+    width: 100%;
+    height :8vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right,#b7ad42,#bc860f);
+}
+.main h1 a{
+    color: white;
+    text-decoration: none;
+}
+nav{
+    width: 90%;
+    position: sticky;
+    margin: 20px auto;
+    z-index: 1;
+    display:flex;
+    align-items: center;
+}
+.menu{
+    flex: 1;
+    text-align: right;   
+}
+.menu ul li{
+    list-style:none;
+    display: inline-block;
+    margin: 0 40px;
+}
+.menu ul ion-icon{
+    color: white;
+    font-size:30px;
+}
+.menu ul ion-icon:hover{
+    color: black;
+}
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: black;
+}
+.savedsummaries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('background.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.Summary-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: url('sb.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 92vh;
+    min-width: 160vh;
+    max-width: 190vh;
+    border-radius: 20px;
+}
+.Summary-container h3 {
+    margin-top: 1px;
+    font-size:40px;
+    color: white;
+}
+.Summary-container h4{
+    margin-top: 15px;
+    font-size:23px;
+    color: white;
+}
+.Summary-container p{
+    margin-top: 15px;
+    font-size:20px;
+    color: white;
+}
+.Summary-container li{
+    color: white;
+}
+.Summary-container small{
+    color: white;
+}
+.title h1{
+    position: absolute;
+    top: 28%;
+    left: 24%;
+    font-size:60px;
+}
+.title h4{
+    position: absolute;
+    top: 37%;
+    left: 24.5%;
+    font-size:30px;
+}
+
+.footer{
+    position:relative;
+    bottom: -130%;
+    width: 100%;
+    height :18vh;
+    overflow: hidden;
+    background: linear-gradient(to right,#b7ad42,#bc860f);
+    background-size:cover;
+}
+.footer h2{
+    position: absolute;
+    left: 13%;
+    color: white;
+    font-size: 30px;
+}
+.footer h4{
+    position: absolute;
+    bottom: 57%;
+    left: 13%;
+    color: white;
+    font-size: 26px;
+}
+.footer p{
+    position: absolute;
+    bottom: 20%;
+    left: 13%;
+    color: white;
+    font-size: 18px;
+    max-width: 50vh;
+}
+.contact p{
+    position: absolute;
+    bottom: 44%;
+    left: 72%;
+    color: white;
+    font-size: 20px;
+}
+.contact p:hover{
+    color: black;
+}
+.contact h5{
+    position: absolute;
+    bottom: 59%;
+    left: 72%;
+    color: white;
+    font-size: 20px;
+}
+.contact ion-icon{
+    position: absolute;
+    bottom: 45%;
+    left: 83%;
+    color: white;
+    font-size: 30px;
+}
+.copyright h6{
+    color:white;
+    position: absolute;
+    text-align: center;
+    bottom:1%;
+    left:40%;
+    font-size:14px;
+}
