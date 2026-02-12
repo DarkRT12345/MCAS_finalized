@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 title{
     text-decoration: none;
 }
 .main{
     width: 100%;
-    height :8vh;
+    height: 8vh;
+    min-height: 60px;
     position: relative;
     overflow: hidden;
     background: linear-gradient(to right,#b7ad42,#bc860f);
@@ -19,6 +21,7 @@ title{
 }
 nav{
     width: 90%;
+    max-width: 1200px;
     position: sticky;
     margin: 20px auto;
     z-index: 1;
@@ -57,27 +60,39 @@ nav{
     background: url('background.jpg')no-repeat;
     background-position: center;
     background-size: cover;
+    padding: 2rem;
 }
 .summarypage h1{
     position: absolute;
     color: white;
     top: 15%;
-    font-size: 60px;
+    font-size: clamp(32px, 6vw, 60px);
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
 }
+.outputbox{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 .outputbox textarea{
-    position: absolute;
-    width: 120vh;
+    width: 100%;
     height: 58vh;
-    left:18%;
-    top: 25%;
+    min-height: 300px;
+    max-height: 600px;
     font-family:"Times New Roman", Times, serif;  
-    font-size: 21px; 
+    font-size: clamp(16px, 2vw, 21px); 
     line-height: 1.5;  
     background-color: #40444B;
     color: white;
-    resize: none;
+    resize: vertical;
     border-radius: 40px;
-    padding:2em;
+    padding: 2em;
+    border: none;
+    margin-top: 80px;
 }    
 .outputbox textarea h1{
     position:absolute;
@@ -97,7 +112,7 @@ nav{
     position: absolute;
     top: 98%;
     right: 20%;
-    width:10%;
+    width: clamp(100px, 15%, 150px);
     height: 40px;
     border-radius: 40px;
     color:black;
@@ -105,7 +120,7 @@ nav{
     border:none;
     outline: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(14px, 1.5vw, 1em);
     font-weight: 600;
 }
 .bookmark button ion-icon{
@@ -121,7 +136,7 @@ button:hover{
     position: absolute;
     top: 98%;
     right: 31%;
-    width:10%;
+    width: clamp(100px, 15%, 150px);
     height: 40px;
     border-radius: 40px;
     color:black;
@@ -129,7 +144,7 @@ button:hover{
     border:none;
     outline: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(14px, 1.5vw, 1em);
     font-weight: 600;
 }
 .generatepdf button:hover{
@@ -137,64 +152,209 @@ button:hover{
     color:white;
 }
 .footer{
-    position:relative;
-    bottom: -130%;
     width: 100%;
-    height :18vh;
+    min-height: 18vh;
     overflow: hidden;
     background: linear-gradient(to right,#b7ad42,#bc860f);
     background-size:cover;
+    padding: 2rem 1rem;
+    position: relative;
 }
 .footer h2{
-    position: absolute;
-    left: 13%;
     color: white;
-    font-size: 30px;
+    font-size: clamp(20px, 3vw, 30px);
+    margin-bottom: 0.5rem;
 }
 .footer h4{
-    position: absolute;
-    bottom: 57%;
-    left: 13%;
     color: white;
-    font-size: 26px;
+    font-size: clamp(18px, 2.5vw, 26px);
+    margin-bottom: 0.5rem;
 }
 .footer p{
-    position: absolute;
-    bottom: 20%;
-    left: 13%;
     color: white;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     max-width: 50vh;
 }
+.contact{
+    margin-top: 1rem;
+}
 .contact p{
-    position: absolute;
-    bottom: 44%;
-    left: 72%;
     color: white;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
+    margin-top: 0.5rem;
 }
 .contact p:hover{
     color: black;
 }
 .contact h5{
-    position: absolute;
-    bottom: 59%;
-    left: 72%;
     color: white;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
 }
 .contact ion-icon{
-    position: absolute;
-    bottom: 45%;
-    left: 83%;
     color: white;
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+.copyright{
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
 }
 .copyright h6{
     color:white;
-    position: absolute;
     text-align: center;
-    bottom:1%;
-    left:40%;
-    font-size:14px;
+    font-size: clamp(12px, 1.5vw, 14px);
+}
+
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) {
+    nav{
+        width: 95%;
+        margin: 15px auto;
+    }
+    
+    .summarypage h1{
+        top: 12%;
+        font-size: clamp(28px, 5vw, 48px);
+    }
+    
+    .outputbox{
+        max-width: 90%;
+    }
+    
+    .outputbox textarea{
+        font-size: clamp(16px, 2.2vw, 19px);
+        padding: 1.5em;
+    }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+    .main{
+        height: auto;
+        padding: 0.5rem 0;
+    }
+    
+    nav{
+        width: 95%;
+        margin: 10px auto;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    nav h1 a{
+        font-size: clamp(20px, 5vw, 28px);
+    }
+    
+    .menu ul li{
+        margin: 0 15px;
+    }
+    
+    .summarypage{
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .summarypage h1{
+        position: relative;
+        top: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: clamp(24px, 6vw, 36px);
+    }
+    
+    .outputbox{
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .outputbox textarea{
+        height: 50vh;
+        min-height: 250px;
+        font-size: 16px;
+        padding: 1.5em;
+        border-radius: 20px;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .bookmark button,
+    .generatepdf button{
+        position: relative;
+        top: auto;
+        right: auto;
+        width: clamp(120px, 35%, 180px);
+        height: 42px;
+        font-size: 15px;
+        margin: 0.5rem;
+    }
+    
+    .footer{
+        padding: 2rem 1rem;
+    }
+    
+    .footer h2,
+    .footer h4,
+    .footer p,
+    .contact p,
+    .contact h5{
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        text-align: center;
+    }
+    
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+    
+    .contact ion-icon{
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+    
+    .copyright h6{
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .main{
+        padding: 0.5rem 0;
+    }
+    
+    nav h1 a{
+        font-size: 22px;
+    }
+    
+    .summarypage h1{
+        font-size: 24px;
+        padding: 0 0.5rem;
+    }
+    
+    .outputbox textarea{
+        font-size: 14px;
+        padding: 1em;
+        border-radius: 15px;
+    }
+    
+    .bookmark button,
+    .generatepdf button{
+        width: 140px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .footer{
+        padding: 1.5rem 0.5rem;
+    }
 }

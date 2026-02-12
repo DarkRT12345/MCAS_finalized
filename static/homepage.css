@@ -2,13 +2,15 @@
     margin: 0;
     padding: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 title{
     text-decoration: none;
 }
 .main{
     width: 100%;
-    height :8vh;
+    height: 8vh;
+    min-height: 60px;
     position: relative;
     overflow: hidden;
     background: linear-gradient(to right,#b7ad42,#bc860f);
@@ -19,6 +21,7 @@ title{
 }
 nav{
     width: 90%;
+    max-width: 1200px;
     position: sticky;
     margin: 20px auto;
     z-index: 1;
@@ -57,7 +60,8 @@ nav{
     width: 100%;
     background: url('background.jpg');
     background-position: center;
-    border-width: 110px;
+    background-size: cover;
+    padding: 2rem;
 }
 .text{
     display: flex;
@@ -66,31 +70,43 @@ nav{
     width: 100%;
     min-height: 100vh;
     background-position: center;
-    border-width: 110px;
+    background-size: cover;
     background: url('background.jpg');
+    padding: 2rem;
+    flex-direction: column;
 }
 .text h1{
     position: absolute;
     top: 11%;
-    left: 40%;
-    font-size:40px;
+    font-size: clamp(24px, 5vw, 40px);
     color: white;
+    text-align: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.textinputbox{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .textinputbox textarea{
-    position: absolute;
-    width: 120vh;
+    width: 100%;
     height: 58vh;
-    left:18%;
-    top: 20%;
+    min-height: 300px;
+    max-height: 600px;
     font-family:"Times New Roman", Times, serif;  
-    font-size: 21px; 
+    font-size: clamp(16px, 2vw, 21px); 
     line-height: 1.5;  
     background-color: #40444B;
     color: white;
-    resize: none;
+    resize: vertical;
     border-radius: 40px;
-    padding:2em;
+    padding: 2em;
+    border: none;
+    margin-top: 80px;
 }  
 .textinputbox textarea h1{
     position:absolute;
@@ -133,43 +149,50 @@ button{
     position: absolute;
     top: 45%;
     right: 20%;
-    width:8%;
+    width: clamp(100px, 15%, 150px);
     height: 40px;
     border-radius: 40px;
     background: white;
     border:none;
     outline: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(14px, 1.5vw, 1em);
     text-decoration: none;
     font-weight: 600;
 }
 .button a{
     color: inherit;
-  text-decoration: inherit;
+    text-decoration: inherit;
 }
 button:hover{
     color: white;
     background-color: black;
 }
+.textbutton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 .textbutton button{
-    position: absolute;
-    top: 93%;
-    right: 45%;
-    width:8%;
-    height: 40px;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: clamp(120px, 20%, 200px);
+    height: 45px;
     border-radius: 40px;
     background: white;
     border:none;
     outline: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(14px, 1.5vw, 1em);
     text-decoration: none;
     font-weight: 600;
 }
 .textbutton button a{
     color: inherit;
-  text-decoration: inherit;
+    text-decoration: inherit;
 }
 .textbutton button:hover{
     color: white;
@@ -200,20 +223,19 @@ button:hover{
     color: white;
 }
 input[type="text"] {
-    /* Styles for the input box */
     border-radius: 30px;
     outline: none;
-  }
+}
   
-  input[type="text"]::-webkit-autofill {
+input[type="text"]::-webkit-autofill {
     background-color: transparent !important;
-    color: black; /* Change color as needed */
-  }
+    color: black;
+}
   
-  input[type="text"]::-webkit-autofill:hover,
-  input[type="text"]::-webkit-autofill:focus {
+input[type="text"]::-webkit-autofill:hover,
+input[type="text"]::-webkit-autofill:focus {
     background-color: transparent !important;
-  }
+}
   
 .tutorial{
     display: flex;
@@ -279,64 +301,207 @@ input[type="text"] {
     border-radius: 30px;
 }
 .footer{
-    position:relative;
-    bottom: -130%;
     width: 100%;
-    height :18vh;
+    min-height: 18vh;
     overflow: hidden;
     background: linear-gradient(to right,#b7ad42,#bc860f);
     background-size:cover;
+    padding: 2rem 1rem;
+    position: relative;
 }
 .footer h2{
-    position: absolute;
-    left: 13%;
     color: white;
-    font-size: 30px;
+    font-size: clamp(20px, 3vw, 30px);
+    margin-bottom: 0.5rem;
 }
 .footer h4{
-    position: absolute;
-    bottom: 57%;
-    left: 13%;
     color: white;
-    font-size: 26px;
+    font-size: clamp(18px, 2.5vw, 26px);
+    margin-bottom: 0.5rem;
 }
 .footer p{
-    position: absolute;
-    bottom: 20%;
-    left: 13%;
     color: white;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     max-width: 50vh;
 }
+.contact{
+    margin-top: 1rem;
+}
 .contact p{
-    position: absolute;
-    bottom: 44%;
-    left: 72%;
     color: white;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
+    margin-top: 0.5rem;
 }
 .contact p:hover{
     color: black;
 }
 .contact h5{
-    position: absolute;
-    bottom: 59%;
-    left: 72%;
     color: white;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
 }
 .contact ion-icon{
-    position: absolute;
-    bottom: 45%;
-    left: 83%;
     color: white;
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+.copyright{
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
 }
 .copyright h6{
     color:white;
-    position: absolute;
     text-align: center;
-    bottom:1%;
-    left:40%;
-    font-size:14px;
+    font-size: clamp(12px, 1.5vw, 14px);
+}
+
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) {
+    nav{
+        width: 95%;
+        margin: 15px auto;
+    }
+    
+    .text h1{
+        top: 12%;
+        font-size: clamp(22px, 4vw, 32px);
+    }
+    
+    .textinputbox{
+        max-width: 90%;
+    }
+    
+    .textinputbox textarea{
+        font-size: clamp(16px, 2.2vw, 19px);
+        padding: 1.5em;
+    }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+    .main{
+        height: auto;
+        padding: 0.5rem 0;
+    }
+    
+    nav{
+        width: 95%;
+        margin: 10px auto;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    nav h1 a{
+        font-size: clamp(20px, 5vw, 28px);
+    }
+    
+    .menu ul li{
+        margin: 0 15px;
+    }
+    
+    .text{
+        min-height: auto;
+        padding: 1rem;
+    }
+    
+    .text h1{
+        position: relative;
+        top: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-size: clamp(20px, 5vw, 28px);
+    }
+    
+    .textinputbox{
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .textinputbox textarea{
+        height: 50vh;
+        min-height: 250px;
+        font-size: 16px;
+        padding: 1.5em;
+        border-radius: 20px;
+        margin-top: 0;
+    }
+    
+    .textbutton{
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .textbutton button{
+        width: clamp(140px, 40%, 200px);
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .footer{
+        padding: 2rem 1rem;
+    }
+    
+    .footer h2,
+    .footer h4,
+    .footer p,
+    .contact p,
+    .contact h5{
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        text-align: center;
+    }
+    
+    .contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+    
+    .contact ion-icon{
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+    
+    .copyright h6{
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .main{
+        padding: 0.5rem 0;
+    }
+    
+    nav h1 a{
+        font-size: 22px;
+    }
+    
+    .text h1{
+        font-size: 20px;
+        padding: 0 0.5rem;
+    }
+    
+    .textinputbox textarea{
+        font-size: 14px;
+        padding: 1em;
+        border-radius: 15px;
+    }
+    
+    .textbutton button{
+        width: 160px;
+        height: 42px;
+        font-size: 15px;
+    }
+    
+    .footer{
+        padding: 1.5rem 0.5rem;
+    }
 }
