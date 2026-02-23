@@ -11,11 +11,11 @@ MCAS is a Flask-based web application designed to analyze multimedia content thr
 
 ## Features
 
-- 🔍 **Advanced Text Summarization**: Uses state-of-the-art seq2seq models for accurate content summarization
-- ✏️ **Grammar & Style Correction**: Automatic detection and correction of grammatical errors
-- 📦 **Chunked Processing**: Handles large documents by intelligently chunking text for optimal processing
-- 🚀 **Web Interface**: User-friendly Flask web application
-- 🔧 **Production Ready**: Includes Gunicorn for production deployment
+-  **Advanced Text Summarization**: Uses state-of-the-art seq2seq models for accurate content summarization
+-  **Grammar & Style Correction**: Automatic detection and correction of grammatical errors
+-  **Chunked Processing**: Handles large documents by intelligently chunking text for optimal processing
+-  **Web Interface**: User-friendly Flask web application
+-  **Production Ready**: Includes Gunicorn for production deployment
 
 ## Tech Stack
 
@@ -116,7 +116,7 @@ This module handles:
 ## Model Details
 
 The system uses:
-- **Seq2Seq Model**: Pre-trained transformer model for abstractive summarization
+- **Seq2Seq Model**: Fine-tuned transformer model for abstractive summarization
 - **Tokenizer**: SentencePiece-based tokenizer for the summarization model
 - **Grammar Checker**: Language Tool with English US locale
 
@@ -136,9 +136,6 @@ The system uses:
 - Result caching mechanism
 - Web UI improvements with progress tracking
 
-## License
-
-This project is available on GitHub at [DarkRT12345/MCAS_finalized](https://github.com/DarkRT12345/MCAS_finalized)
 
 ## Contributing
 
